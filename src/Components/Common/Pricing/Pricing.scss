@@ -1,0 +1,315 @@
+@import '../../../index.scss';
+
+.pricing-section {
+    padding: 80px 0 100px;
+    background: white;
+    position: relative;
+    overflow: hidden;
+
+    .pricing-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 var(--section-padding-left, 80px) 0 var(--section-padding-right, 80px);
+        position: relative;
+        z-index: 2;
+    }
+
+    .pricing-header {
+        text-align: center;
+        margin-bottom: 50px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 50px;
+    }
+
+    .pricing-cards {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+
+    .pricing-card {
+        background: linear-gradient(180deg, rgba($primary-color, 0.03) 0%, rgba($secondary-color, 0.05) 100%);
+        border: 2px solid rgba($primary-color, 0.15);
+        border-radius: 16px;
+        padding: 32px 24px;
+        text-align: center;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: $secondary-color;
+            box-shadow: 0 8px 30px rgba($primary-color, 0.1);
+        }
+
+        .card-title {
+            font-family: 'Anek Latin', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: $primary-color;
+            margin: 0 0 8px 0;
+        }
+
+        .card-label {
+            font-family: 'Anek Latin', sans-serif;
+            font-size: 12px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: #666;
+            margin: 0 0 16px 0;
+        }
+
+        .card-price-aed {
+            font-family: 'Anek Latin', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: $primary-color;
+            margin: 0 0 4px 0;
+        }
+
+        .card-price-usd {
+            font-family: 'Anek Latin', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            color: $secondary-color;
+            margin: 0;
+        }
+    }
+
+    .price-disclaimer {
+        font-family: 'Anek Latin', sans-serif;
+        font-size: 12px;
+        color: #666;
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto 50px;
+        line-height: 1.6;
+    }
+
+    .payment-plan-section {
+        background: linear-gradient(180deg, rgba($primary-color, 0.04) 0%, rgba($secondary-color, 0.06) 100%);
+        border: 1px solid rgba($primary-color, 0.12);
+        border-radius: 16px;
+        padding: 40px;
+        margin-bottom: 40px;
+
+        .payment-plan-title {
+            font-family: 'Anek Latin', sans-serif;
+            font-size: 24px;
+            font-weight: 700;
+            color: $primary-color;
+            text-align: center;
+            margin: 0 0 30px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .payment-plan-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .payment-plan-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 14px 18px;
+            background: white;
+            border-radius: 10px;
+            border-left: 4px solid $secondary-color;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+
+            &.highlight {
+                background: linear-gradient(135deg, rgba($primary-color, 0.08) 0%, rgba($secondary-color, 0.12) 100%);
+                border-left-color: $primary-color;
+                font-weight: 600;
+
+                .payment-percent {
+                    color: $primary-color;
+                }
+            }
+
+            .payment-percent {
+                font-family: 'Anek Latin', sans-serif;
+                font-size: 16px;
+                font-weight: 700;
+                color: $secondary-color;
+                min-width: 50px;
+            }
+
+            .payment-label {
+                font-family: 'Anek Latin', sans-serif;
+                font-size: 14px;
+                color: #333;
+                line-height: 1.4;
+            }
+        }
+
+        .payment-disclaimer {
+            font-family: 'Anek Latin', sans-serif;
+            font-size: 12px;
+            color: #666;
+            text-align: center;
+            font-style: italic;
+            margin: 0;
+        }
+    }
+
+    .pricing-footer {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .cta-button {
+            text-decoration: none;
+
+            .btn.btn-primary {
+                padding: 14px 40px;
+                font-family: 'Anek Latin', sans-serif;
+                font-size: 15px;
+                font-weight: 600;
+                border-radius: 50px;
+                transition: all 0.3s ease;
+            }
+        }
+    }
+}
+
+// Responsive Design
+@media (max-width: 1200px) {
+    .pricing-section {
+        .pricing-container {
+            padding: 0 50px;
+        }
+    }
+}
+
+@media (max-width: 900px) {
+    .pricing-section {
+        padding: 60px 0 80px;
+
+        .pricing-container {
+            padding: 0 30px;
+        }
+
+        .pricing-cards {
+            grid-template-columns: 1fr;
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .pricing-card {
+            padding: 28px 24px;
+
+            .card-price-aed {
+                font-size: 26px;
+            }
+        }
+
+        .payment-plan-section {
+            padding: 30px 24px;
+
+            .payment-plan-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .pricing-section {
+        padding: 50px 0 70px;
+
+        .pricing-container {
+            padding: 0 20px;
+        }
+
+        .pricing-header {
+            margin-bottom: 36px;
+
+            .pricing-title {
+                font-size: 32px;
+            }
+
+            .pricing-subtitle {
+                font-size: 15px;
+            }
+        }
+
+        .price-disclaimer {
+            margin-bottom: 36px;
+            font-size: 11px;
+        }
+
+        .payment-plan-section {
+            padding: 24px 20px;
+            margin-bottom: 32px;
+
+            .payment-plan-title {
+                font-size: 20px;
+                margin-bottom: 24px;
+            }
+
+            .payment-plan-item {
+                padding: 12px 16px;
+
+                .payment-percent {
+                    font-size: 15px;
+                    min-width: 45px;
+                }
+
+                .payment-label {
+                    font-size: 13px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    .pricing-section {
+        padding: 40px 0 60px;
+
+        .pricing-container {
+            padding: 0 15px;
+        }
+
+        .pricing-header {
+            .pricing-title {
+                font-size: 28px;
+            }
+
+            .pricing-subtitle {
+                font-size: 14px;
+            }
+        }
+
+        .pricing-card {
+            .card-title {
+                font-size: 16px;
+            }
+
+            .card-price-aed {
+                font-size: 24px;
+            }
+
+            .card-price-usd {
+                font-size: 14px;
+            }
+        }
+
+        .pricing-footer {
+            .cta-button .btn.btn-primary {
+                padding: 12px 30px;
+                font-size: 14px;
+            }
+        }
+    }
+}

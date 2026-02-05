@@ -1,0 +1,272 @@
+@import '../../../index.scss';
+
+.neighborhood-section {
+    background: white;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 100px;
+
+    .section-heading {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+        padding-bottom: 50px;
+    }
+
+    /* 50/50 Split Layout */
+    .neighborhood-split {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 500px;
+    }
+
+    /* Image Slider - Left 50% */
+    .slider-wrapper {
+        position: relative;
+        overflow: hidden;
+        background: #f5f5f5;
+
+        .slider-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 500px;
+
+            .slide {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                transition: opacity 0.6s ease-in-out;
+                pointer-events: none;
+
+                &.active {
+                    opacity: 1;
+                    pointer-events: auto;
+                    z-index: 1;
+                }
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    display: block;
+                }
+            }
+        }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 2;
+
+            .dot {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                border: 2px solid white;
+                background: transparent;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                padding: 0;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0.5);
+                }
+
+                &.active {
+                    background: white;
+                    border-color: white;
+                    box-shadow: 0 0 0 2px rgba($primary-color, 0.3);
+                }
+            }
+        }
+    }
+
+    /* Neighboring Places - Right 50% */
+    .places-wrapper {
+        display: flex;
+        align-items: stretch;
+        background: linear-gradient(180deg, rgba($primary-color, 0.03) 0%, rgba($secondary-color, 0.05) 100%);
+    }
+
+    .places-inner {
+        padding: 50px 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+    }
+
+    .places-title {
+        font-family: "Anek Latin", sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: $primary-color;
+        margin: 0 0 30px 0;
+    }
+
+    .places-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .place-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba($primary-color, 0.1);
+        gap: 20px;
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    .place-name {
+        font-family: "Anek Latin", sans-serif;
+        font-size: 15px;
+        font-weight: 500;
+        color: #333;
+        line-height: 1.4;
+        flex: 1;
+    }
+
+    .place-time {
+        font-family: "Anek Latin", sans-serif;
+        font-size: 14px;
+        font-weight: 700;
+        color: $secondary-color;
+        letter-spacing: 1px;
+        white-space: nowrap;
+    }
+
+    /* Responsive */
+    @media (max-width: 1200px) {
+        .section-heading {
+            padding: 0 60px 40px;
+        }
+
+        .places-inner {
+            padding: 40px 50px;
+        }
+    }
+
+    @media (max-width: 968px) {
+        .neighborhood-split {
+            grid-template-columns: 1fr;
+            min-height: auto;
+        }
+
+        .slider-wrapper .slider-track {
+            min-height: 400px;
+        }
+
+        .places-wrapper {
+            min-height: auto;
+        }
+
+        .places-inner {
+            padding: 40px 40px 50px;
+        }
+
+        .place-item {
+            padding: 14px 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .section-heading {
+            padding: 0 30px 30px;
+
+            .section-tagline {
+                font-size: 18px;
+                letter-spacing: 2px;
+            }
+
+            .section-description {
+                font-size: 15px;
+                line-height: 1.6;
+            }
+        }
+
+        .slider-wrapper .slider-track {
+            min-height: 320px;
+        }
+
+        .places-inner {
+            padding: 30px 30px 40px;
+        }
+
+        .places-title {
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+
+        .place-name {
+            font-size: 14px;
+        }
+
+        .place-time {
+            font-size: 13px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .section-heading {
+            padding: 0 20px 24px;
+
+            .section-tagline {
+                font-size: 16px;
+                letter-spacing: 1.5px;
+            }
+
+            .section-description {
+                font-size: 14px;
+            }
+        }
+
+        .slider-wrapper .slider-track {
+            min-height: 280px;
+        }
+
+        .places-inner {
+            padding: 24px 20px 36px;
+        }
+
+        .place-item {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            padding: 14px 0;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .section-heading {
+            .section-tagline {
+                font-size: 14px;
+            }
+
+            .section-description {
+                font-size: 13px;
+            }
+        }
+
+        .slider-wrapper .slider-track {
+            min-height: 250px;
+        }
+    }
+}

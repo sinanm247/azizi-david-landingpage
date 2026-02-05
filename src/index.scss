@@ -1,0 +1,328 @@
+@import './_fonts.scss';
+
+$primary-color: #0C1929;
+$secondary-color: #8A6941;
+$black: #000000;
+$white: #FFFFFF;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// color code
+
+// hexa: ffffff
+
+// 00171f
+
+// 003459
+
+// 007ea7
+
+// 00a8e8
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background: white;
+  font-family: 'Anek Latin', sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// code {
+//   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+//     monospace;
+// }
+
+html {
+  /* scroll-snap-type: y mandatory; */
+  scroll-behavior: smooth;
+  scroll-snap-type: none;
+}
+
+section{
+  height: 100%;
+  scroll-snap-align: center;
+}
+
+button, input, select {
+  font-family: "Anek Latin", sans-serif;
+}
+
+button {
+  font-weight: 600;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  list-style: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  transition: .5s;
+  color: inherit;
+}
+
+a:hover {
+  transition: .5s;
+}
+.underline {
+  text-decoration: underline;
+
+  &:hover {
+      color: $secondary-color;
+  }
+}
+
+.btn {
+  border-radius: 50px;
+  padding: 14px 40px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-glass {
+  color: $white;
+  background: linear-gradient(135deg, $primary-color 0%, $secondary-color 100%);
+  border: 1px solid $white;
+
+  &:hover {
+    background: $secondary-color;
+    border-color: $primary-color;
+    color: $white;
+  }
+}
+
+.btn-primary {
+  color: white;
+  background: $primary-color;
+  border: 1px solid $primary-color;
+
+  &:hover {
+    background: $secondary-color;
+    color: $white;
+  }
+}
+
+// Blinking animation for brochure button
+@keyframes blinkPrimaryButton {
+  0%, 100% {
+      background: $primary-color;
+      color: white;
+  }
+  50% {
+      background: white;
+      color: $secondary-color;
+  }
+}
+
+// Blinking animation for brochure button
+@keyframes blinkWhatsappButton {
+  0%, 100% {
+      background: #3FC351;
+      color: white;
+  }
+  50% {
+      background: white;
+      color: #3FC351;
+  }
+}
+
+.color {
+  color: $secondary-color;
+}
+
+.black {
+  color: black;
+}
+
+.main-title {
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.main-description {
+  margin-top: 20px;
+  max-width: 700px;
+}
+
+/* Shared Section Header - Consistent across all sections (matches AboutUsSection) */
+.section-header {
+  .section-tagline {
+    font-family: "Anek Latin", sans-serif;
+    font-size: 25px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8A6941;
+    margin: 0 0 20px 0;
+  }
+
+  .section-title {
+    font-family: "Anek Latin", sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin: 0 0 20px 0;
+  }
+
+  .section-description {
+    font-family: "Anek Latin", sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    color: #333;
+    margin: 0;
+  }
+
+  /* Light variant for dark backgrounds (ContactForm, CTA) */
+  &.section-header--light {
+    .section-tagline { color: rgba(255, 255, 255, 0.9); }
+    .section-title { color: white; }
+    .section-description { color: rgba(255, 255, 255, 0.9); }
+  }
+}
+
+@media (max-width: 768px) {
+  .section-header {
+    .section-tagline { font-size: 20px; letter-spacing: 2px; }
+    .section-title { font-size: 32px; }
+    .section-description { font-size: 16px; }
+  }
+}
+
+@media (max-width: 480px) {
+  .section-header {
+    .section-tagline { font-size: 16px; letter-spacing: 1.5px; }
+    .section-title { font-size: 26px; }
+    .section-description { font-size: 15px; }
+  }
+}
+
+.section-container {
+  // margin-left: auto;
+  // margin-right: auto;
+  // max-width: 1600px;
+  padding-left: 300px;
+  padding-right: 300px;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.dashboard-head {
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+// .custom-toast {
+//   z-index: 1000000; /* ensure it stays on top */
+// }
+
+@media(max-width: 2000px) {
+  .section-container {
+    // margin-left: auto;
+    // margin-right: auto;
+    // max-width: 1600px;
+    padding-left: 200px;
+    padding-right: 200px;
+  } 
+}
+
+@media(max-width: 1800px) {
+  .section-container {
+    // margin-left: auto;
+    // margin-right: auto;
+    // max-width: 1600px;
+    padding-left: 150px;
+    padding-right: 150px;
+  } 
+}
+
+@media(max-width: 1600px) {
+  .section-container {
+    // margin-left: auto;
+    // margin-right: auto;
+    // max-width: 1600px;
+    padding-left: 100px;
+    padding-right: 100px;
+  } 
+}
+
+@media(max-width: 900px) {
+  .section-container {
+    // margin-left: auto;
+    // margin-right: auto;
+    // max-width: 1600px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+  } 
+}
+
+@media(max-width: 600px) {
+  .section-container {
+    // margin-left: auto;
+    // margin-right: auto;
+    // max-width: 1600px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  } 
+}
+
+@media(max-width: 480px) {
+  .section-container {
+    // margin-left: auto;
+    // margin-right: auto;
+    // max-width: 1600px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  } 
+}
+
+@media(max-width: 1200px) {
+  .main-title {
+    font-size: 35px;
+  }
+}
+
+@media(max-width: 768px) {
+  .main-title {
+    font-size: 30px;
+  }
+
+  .btn-white, .btn-black, .btn-blue {
+    padding: 8px 12px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+}

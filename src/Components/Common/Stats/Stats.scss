@@ -1,0 +1,204 @@
+.stats-section {
+    background: white;
+    position: relative;
+
+    .section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        // padding-top: 0;
+        // padding-bottom: 0;
+    }
+
+    .section-title {
+        font-family: "Anek Latin", sans-serif;
+        font-size: 42px;
+        font-weight: 700;
+        color: #1a1a1a;
+        text-align: center;
+        // margin-bottom: 60px;
+        line-height: 1.2;
+        text-transform: uppercase;
+    }
+
+    .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 40px;
+        margin-top: 10px;
+    }
+
+    .stat-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 30px 20px;
+        transition: transform 0.3s ease;
+
+        &:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-icon {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f8f8;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            color: #14332B;
+            font-size: 28px;
+            transition: all 0.3s ease;
+
+            svg {
+                width: 28px;
+                height: 28px;
+            }
+        }
+
+        &:hover .stat-icon {
+            background: #14332B;
+            color: white;
+        }
+
+        .stat-content {
+            width: 100%;
+        }
+
+        .stat-number {
+            font-family: "Anek Latin", sans-serif;
+            font-size: 35px;
+            font-weight: 700;
+            color: #14332B;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .stat-label {
+            font-family: "Anek Latin", sans-serif;
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-subtext {
+            font-family: "Anek Latin", sans-serif;
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            margin-top: 8px;
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .stats-section {
+        .stats-grid {
+            gap: 30px;
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .stats-section {
+        padding: 60px 0;
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 50px;
+        }
+
+        .stats-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-section {
+        padding: 50px 0;
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 40px;
+        }
+
+        .stats-grid {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        .stat-item {
+            padding: 25px 15px;
+
+            .stat-icon {
+                width: 55px;
+                height: 55px;
+                font-size: 24px;
+                margin-bottom: 18px;
+
+                svg {
+                    width: 24px;
+                    height: 24px;
+                }
+            }
+
+            .stat-number {
+                font-size: 36px;
+            }
+
+            .stat-label {
+                font-size: 15px;
+            }
+
+            .stat-subtext {
+                font-size: 13px;
+            }
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .stats-section {
+        padding: 40px 0;
+
+        .section-container {
+            padding: 0 15px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            margin-bottom: 30px;
+        }
+
+        .stat-item {
+            padding: 20px 10px;
+
+            .stat-icon {
+                width: 50px;
+                height: 50px;
+                font-size: 22px;
+                margin-bottom: 15px;
+
+                svg {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+
+            .stat-number {
+                font-size: 32px;
+            }
+
+            .stat-label {
+                font-size: 14px;
+            }
+        }
+    }
+}
