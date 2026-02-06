@@ -35,13 +35,35 @@
     .logo-div {
         display: flex;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
+        gap: 16px;
         z-index: 10001;
 
+        .logo-link {
+            display: flex;
+            align-items: center;
+        }
+
         .logo {
-            width: 120px;
-            height: 60px;
+            height: 50px;
+            width: auto;
             object-fit: contain;
+        }
+
+        .logo-azizi {
+            max-width: 120px;
+        }
+
+        .logo-divider {
+            width: 1px;
+            height: 32px;
+            background: rgba(255, 255, 255, 0.5);
+            flex-shrink: 0;
+        }
+
+        .logo-propwise {
+            max-width: 120px;
+            height: 50px;
         }
     }
 
@@ -520,9 +542,16 @@
             }
         }
 
-        .logo {
-            width: 100px;
+        .logo-azizi {
+            max-width: 100px;
             height: 50px;
+        }
+        .logo-divider {
+            height: 28px;
+        }
+        .logo-propwise {
+            max-width: 80px;
+            height: 32px;
         }
     }
 
@@ -571,9 +600,16 @@
         // box-shadow: 0 8px 32px rgba(20, 51, 43, 0.3);
         color: white;
 
-        .logo {
-            width: 90px;
+        .logo-azizi {
+            max-width: 90px;
             height: 45px;
+        }
+        .logo-divider {
+            height: 24px;
+        }
+        .logo-propwise {
+            max-width: 70px;
+            height: 28px;
         }
 
         .header-icons {
@@ -644,9 +680,16 @@
         min-height: 60px;
         color: white;
 
-        .logo {
-            width: 80px;
+        .logo-azizi {
+            max-width: 80px;
             height: 40px;
+        }
+        .logo-divider {
+            height: 22px;
+        }
+        .logo-propwise {
+            max-width: 60px;
+            height: 24px;
         }
 
         .header-icons {
@@ -740,9 +783,19 @@
         min-height: 55px;
         color: white;
 
-        .logo {
-            width: 70px;
+        .logo-azizi {
+            max-width: 70px;
             height: 35px;
+        }
+        .logo-divider {
+            height: 20px;
+        }
+        .logo-propwise {
+            max-width: 52px;
+            height: 22px;
+        }
+        .logo-div {
+            gap: 10px;
         }
 
         .header-icons {

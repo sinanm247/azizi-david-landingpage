@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import "./Header.scss"
 
-// import olfahLogo from "../../../Assets/Logo/olfah-logo.png"
 import olfahLogoWhite from "../../../Assets/Logo/Azizi-Logo-White.png"
+import propwiseLogo from "../../../Assets/Logo/propwise-logo.webp"
 import whatsapp from "../../../Assets/Common/whatsapp.svg"
 
 import { useLocation } from 'react-router-dom'
@@ -162,11 +162,13 @@ export default function Header(){
     return (
         <nav className='navbar-container'>
             <div className={`navbar ${isSticky ? "sticky" : ""} ${location.pathname === "/thank-you" ? "thank-you-header" : ""}`}>
-                {/* Left Logo */}
+                {/* Left Logo: Azizi David | Divider | Propwise */}
                 <div className="logo-div">
                     <a href="/" className="logo-link">
-                        <img src={olfahLogoWhite} alt="Azizi David Logo" className="logo" />
+                        <img src={olfahLogoWhite} alt="Azizi David Logo" className="logo logo-azizi" />
                     </a>
+                    <span className="logo-divider" aria-hidden="true" />
+                    <img src={propwiseLogo} alt="Propwise Realty" className="logo logo-propwise" />
                 </div>
 
                 {/* Centered Navigation */}
